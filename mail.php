@@ -34,3 +34,11 @@ $mail->isHTML(true);                                  // Set email format to HTM
 $mail->Subject = 'Заявка с тестового сайта';
 $mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Обьект: ' .$object. '<br>Дизайн: ' .$design. '<br>Дата: ' .$data.;
 $mail->AltBody = '';
+
+
+if(!$mail->send()) {
+    echo 'Error';
+} else {
+    header('location: thank-you.html');
+}
+?>
